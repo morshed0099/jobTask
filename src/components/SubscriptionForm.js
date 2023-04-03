@@ -8,12 +8,16 @@ export default function SubscriptionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(validate());
+    const form =e.target
+    // console.log(validate());
     if (!validate(email)) {
       setAlertClass('alert-validate');
       return;
     }
+    // api not working than create databse and check toast for succes
+
     // fetch('http://103.108.146.90:5000/sendemail', {
+
     fetch('http://localhost:5000/sendmail', {
       method: 'POST',
       headers: {
@@ -24,7 +28,9 @@ export default function SubscriptionForm() {
       .then(data => JSON.parse(`${data}`))
       .then(data => {
         if (data.acknowledged) {
+          // console.log(data);
           hitToast(data.acknowledged ? 'success' : 'error',"Thank you for subscribe")
+          form.reset();
         }
       })
       .catch(() => hitToast('error', 'Something went wrong. Please try again.'))
