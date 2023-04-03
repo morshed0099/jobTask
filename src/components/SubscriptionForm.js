@@ -8,7 +8,7 @@ export default function SubscriptionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(validate());
     if (!validate(email)) {
       setAlertClass('alert-validate');
       return;
@@ -24,18 +24,25 @@ export default function SubscriptionForm() {
       .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
       .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
       .catch(() => hitToast('Something went wrong. Please try again.', 'error'))
-
     setAlertClass('');
   }
 
   const validate = (email) => {
-    if (email.trim(/^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/).match() == null) {
-      return false;
-    } else if (email.trim() === '') {
+    const valid = /^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/;
+    const isValidEmail = valid.test(email);
+    if (isValidEmail) {
+      return true
+    } else if (email === '') {
       return false;
     }
 
-    return true;
+    // if (email.trim(/^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/).match() == null) {
+    //   return false;
+    // } else if (email.trim() === '') {
+    //   return false;
+    // }
+
+    // return true;
   }
 
   return (
@@ -44,7 +51,6 @@ export default function SubscriptionForm() {
         <input className="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address" onChange={e => setEmail(e.target.value)} />
         <span className="focus-input100"></span>
       </div>
-
       <button className="flex-c-m size3 s2-txt3 how-btn1 trans-04 where1">
         Subscribe
       </button>

@@ -12,7 +12,6 @@ export default function comingSoon() {
         <p className="m2-txt1 txt-center p-b-48">
           Our website is under construction, follow us for update now!
         </p>
-
         <Counter />
 
         <SubscriptionForm />
