@@ -23,8 +23,8 @@ export default function SubscriptionForm() {
     }).then(res => res.text())
       .then(data => JSON.parse(`${data}`))
       .then(data => {
-        if (data.aknowledged) {
-          hitToast(data.success ? 'success' : 'error',"Thank you for subscribe")
+        if (data.acknowledged) {
+          hitToast(data.acknowledged ? 'success' : 'error',"Thank you for subscribe")
         }
       })
       .catch(() => hitToast('error', 'Something went wrong. Please try again.'))
