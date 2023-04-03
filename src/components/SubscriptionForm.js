@@ -23,7 +23,7 @@ export default function SubscriptionForm() {
       .then(data => JSON.parse(`${data}`))
       .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
       .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
-      .catch(() => hitToast('Something went wrong. Please try again.', 'error'))
+      .catch(() => hitToast('error','Something went wrong. Please try again.'))
     setAlertClass('');
   }
 
