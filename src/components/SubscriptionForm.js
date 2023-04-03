@@ -18,7 +18,7 @@ export default function SubscriptionForm() {
 
     // fetch('http://103.108.146.90:5000/sendemail', {
 
-    fetch('http://localhost:5000/sendmail', {
+    fetch('https://codingtest-server.vercel.app/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ export default function SubscriptionForm() {
 
   return (
     <form className="w-full flex-w flex-c-m validate-form" onSubmit={handleSubmit}>
-      <div ref={parentComp} className={"wrap-input100 validate-input where1 " + alertClass} data-validate="Valid email is required: user@email.domain where1">
+      <div ref={parentComp} className={"wrap-input100 validate-input where1 " + alertClass} data-validate="Valid email is required: user@email.domain ">
         <input className="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address" onChange={e => setEmail(e.target.value)} />
         <span className="focus-input100"></span>
       </div>
