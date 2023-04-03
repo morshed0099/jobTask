@@ -1,3 +1,30 @@
+#Core Devs Ltd job task problem solving
+
+2.hitToast hook argument send is not correct 
+problem:catch(() => hitToast('Something went wrong. Please try again.','error').
+
+solving Tecnic : change hitToast function parameter  and working well. 
+ example catch(() => hitToast( 'error','Something went wrong. Please try again.').
+
+3.and api send email is not working.
+
+solving Tecnic :create expresjs server and mongodb databse email collection then insert email.
+and finaly expresjs sever deploy on vercel for live supporting.
+
+
+4. email validate function did not woking fine so i am changing and modify regex validation .
+
+   most of painfull problem was regex to fix . delete trim method i am using test method.
+   alert-validation example email was user@email.domain, but when i am input without any number 
+   faceing exrror. then i am modify regex delete number and facing another problem without number 
+   eamil was not facing problem, but when enter user1111@email.domain this kind of email with number
+   regex create error then i am using 'or' || and create another regext and finaly fix it .
+
+git repo. link :
+live site link :https://calm-mandazi-acd9d5.netlify.app/
+    
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
