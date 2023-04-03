@@ -14,7 +14,7 @@ export default function SubscriptionForm() {
       return;
     }
     // fetch('http://103.108.146.90:5000/sendemail', {
-      fetch('http://localhost:5000/sendmail', {
+    fetch('http://localhost:5000/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -22,13 +22,17 @@ export default function SubscriptionForm() {
       body: JSON.stringify({ email })
     }).then(res => res.text())
       .then(data => JSON.parse(`${data}`))
-      .then(data => hitToast(data.message, data.success ? 'success' : 'error'))     
-      .catch(() => hitToast('error','Something went wrong. Please try again.'))
+      .then(data => {
+        if (data.aknowledged) {
+          hitToast(data.success ? 'success' : 'error',"Thank you for subscribe")
+        }
+      })
+      .catch(() => hitToast('error', 'Something went wrong. Please try again.'))
     setAlertClass('');
   }
 
   const validate = (email) => {
-    const valid = (/^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) || (/^([a-zA-Z\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) ;
+    const valid = (/^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) || (/^([a-zA-Z\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/);
     const isValidEmail = valid.test(email);
     if (isValidEmail) {
       return true
