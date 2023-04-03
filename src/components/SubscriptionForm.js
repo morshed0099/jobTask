@@ -13,7 +13,8 @@ export default function SubscriptionForm() {
       setAlertClass('alert-validate');
       return;
     }
-    fetch('http://103.108.146.90:5000/sendemail', {
+    // fetch('http://103.108.146.90:5000/sendemail', {
+      fetch('http://localhost:5000/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -21,8 +22,7 @@ export default function SubscriptionForm() {
       body: JSON.stringify({ email })
     }).then(res => res.text())
       .then(data => JSON.parse(`${data}`))
-      .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
-      .then(data => hitToast(data.message, data.success ? 'success' : 'error'))
+      .then(data => hitToast(data.message, data.success ? 'success' : 'error'))     
       .catch(() => hitToast('error','Something went wrong. Please try again.'))
     setAlertClass('');
   }
@@ -47,7 +47,7 @@ export default function SubscriptionForm() {
 
   return (
     <form className="w-full flex-w flex-c-m validate-form" onSubmit={handleSubmit}>
-      <div ref={parentComp} className={"wrap-input100 validate-input where1 " + alertClass} data-validate="Valid email is required: user@email.domain">
+      <div ref={parentComp} className={"wrap-input100 validate-input where1 " + alertClass} data-validate="Valid email is required: user@email.domain where1">
         <input className="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address" onChange={e => setEmail(e.target.value)} />
         <span className="focus-input100"></span>
       </div>
