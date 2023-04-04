@@ -1,4 +1,7 @@
-#Core Devs Ltd job task problem solving
+####problems and solving explaing 
+
+1.comming soon page default is missing (export default)
+solving Tecnic :  I just implement default and fix it.
 
 2.hitToast hook argument send is not correct 
 problem:catch(() => hitToast('Something went wrong. Please try again.','error').
@@ -20,8 +23,9 @@ and finaly expresjs sever deploy on vercel for live supporting.
    eamil was not facing problem, but when enter user1111@email.domain this kind of email with number
    regex create error then i am using 'or' || and create another regext and finaly fix it .
 
-git repo. link :
+git repo. link :https://github.com/morshed0099/jobTask
 live site link :https://calm-mandazi-acd9d5.netlify.app/
+    
     
 
 
