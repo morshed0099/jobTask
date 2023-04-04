@@ -25,7 +25,7 @@ after inserting email successfully reset input field with form.reset().
 
 5. modify counter page set end time, and  apply conditions. When the date is expired, counter disable and show the  h1 tag date is expired.
 
-git repo link || live site link
+ live site link : https://calm-mandazi-acd9d5.netlify.app/
 
 Best Regards
 Golam Morshed
