@@ -1,30 +1,37 @@
-####problems and solving explaing 
 
-1.comming soon page default is missing (export default)
-solving Tecnic :  I just implement default and fix it.
+      #### problems and solving explaining 
+
+
+1.coming soon page default is missing (export default)
+
+Solving Technique :  I just implement default and fix it.
 
 2.hitToast hook argument send is not correct 
-problem:catch(() => hitToast('Something went wrong. Please try again.','error').
 
-solving Tecnic : change hitToast function parameter  and working well. 
- example catch(() => hitToast( 'error','Something went wrong. Please try again.').
+Problem : catch(() => hitToast('Something went wrong. Please try again.','error').
 
-3.and api send email is not working.
+Solving Technique : change hitToast function parameter  and work well. 
+ Example:  catch(() => hitToast( 'error','Something went wrong. Please try again.').
 
-solving Tecnic :create expresjs server and mongodb databse email collection then insert email.
-and finaly expresjs sever deploy on vercel for live supporting.
+3.The api send email is not working.
+
+Solving Technique :create expresjs server and mongodb database email collection then insert email. And finally expresjs server deploy on vercel for live support.
+after inserting email successfully reset input field with form.reset().
 
 
-4. email validate function did not woking fine so i am changing and modify regex validation .
+4. The email validate function did not work fine so I am changing and modifying regex    validation.
 
-   most of painfull problem was regex to fix . delete trim method i am using test method.
-   alert-validation example email was user@email.domain, but when i am input without any number 
-   faceing exrror. then i am modify regex delete number and facing another problem without number 
-   eamil was not facing problem, but when enter user1111@email.domain this kind of email with number
-   regex create error then i am using 'or' || and create another regext and finaly fix it .
+ Solving technique : most of the painful problems were regexes to fix . delete trim method I    am using the test method. The alert-validation example email was user@email.domain, but when I am input without any number facing error. then i am modify regex delete number and facing another problem without number email was not facing problem, but when enter user1111@email.domain this kind of email with number regex create error then i am using 'or' || and create another regex and finally fix it .
 
-git repo. link :https://github.com/morshed0099/jobTask
-live site link :https://calm-mandazi-acd9d5.netlify.app/
+5. modify counter page set end time, and  apply conditions. When the date is expired, counter disable and show the  h1 tag date is expired.
+
+git repo link || live site link
+
+Best Regards
+Golam Morshed
++8801991394353
+mdgolammorshed0099@gmail.com
+
     
     
 
